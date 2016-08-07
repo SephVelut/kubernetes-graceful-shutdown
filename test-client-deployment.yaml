@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: test-client-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: test-client
+    spec:
+      containers:
+      - name: test
+        image: sephvelu/test-client:latest
+        ports:
+        - containerPort: 80
